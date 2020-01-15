@@ -2,11 +2,18 @@
 
 cd $(dirname $(realpath $0))
 
-BACKUP_DIR=/srv/samba/share/minecraft-backups
 
-mkdir -p ${BACKUP_DIR}
-sudo chown jc:jc ${BACKUP_DIR}
+# if backup dir not defined set default
+if [ -z "${BACKUP_DIR}" ]; then
+    export BACKUP_DIR="$(pwd)/.data"
+fi
 
+# create backup dir if necessary
+if [ ! -d ${BACKUP_DIR} ]; then
+    mkdir -p ${BACKUP_DIR}
+fi
+
+# epoch time
 TIMESTAMP="$(date +%s)"
 
 if (( $(ls ${BACKUP_DIR} | wc -l) == 5 )); then
