@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - '25565:25565'
+    restart: on-failure
+    environment:
+      - EULA=TRUE
+      - MEMORY=8G
+      #- VIEW_DISTANCE=32
+      #- VERSION=1.14.4
+    volumes:
+      - ./.data:/data
