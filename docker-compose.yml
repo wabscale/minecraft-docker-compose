@@ -12,6 +12,7 @@ services:
       - USE_LARGE_PAGES=true
       - VIEW_DISTANCE=16
       - MEMORY=16G
+      - DIFFICULTY=hard
 
       # Caves and Cliffs data pack
       - 'RESOURCE_PACK=https\://launcher.mojang.com/v1/objects/643b1f8f7f71c74ffc913e8572f52fd5bca88282/CavesAndCliffsPreview.zip'
