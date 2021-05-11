@@ -8,8 +8,12 @@ services:
     restart: on-failure
     environment:
       - EULA=TRUE
-      - MEMORY=8G
-      #- VIEW_DISTANCE=32
-      #- VERSION=1.14.4
+      - VERSION=SNAPSHOT
+      - USE_LARGE_PAGES=true
+      - VIEW_DISTANCE=16
+      - MEMORY=16G
+
+      # Caves and Cliffs data pack
+      - 'RESOURCE_PACK=https\://launcher.mojang.com/v1/objects/643b1f8f7f71c74ffc913e8572f52fd5bca88282/CavesAndCliffsPreview.zip'
     volumes:
       - ./.data:/data

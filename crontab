@@ -1,1 +1,2 @@
 */5 * * * * /opt/minecraft/backup.sh
+0 0 * * * /opt/minecraft/backup.sh 14 .daily
