@@ -15,6 +15,6 @@ services:
       - DIFFICULTY=hard
 
       # Caves and Cliffs data pack
-      - 'RESOURCE_PACK=https\://launcher.mojang.com/v1/objects/643b1f8f7f71c74ffc913e8572f52fd5bca88282/CavesAndCliffsPreview.zip'
+      - 'RESOURCE_PACK=https\://launcher.mojang.com/v1/objects/a6b56d6f14869646eb8d399e99a0149bdd954490/CavesAndCliffsPreview.zip'
     volumes:
       - ./.data:/data
