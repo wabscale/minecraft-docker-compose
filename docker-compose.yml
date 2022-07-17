@@ -2,19 +2,16 @@ version: '2'
 
 services:
   minecraft:
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:latest
     ports:
       - '25565:25565'
     restart: on-failure
     environment:
       - EULA=TRUE
-      - VERSION=SNAPSHOT
+      - VERSION=1.19
       - USE_LARGE_PAGES=true
       - VIEW_DISTANCE=16
       - MEMORY=16G
       - DIFFICULTY=hard
-
-      # Caves and Cliffs data pack
-      - 'RESOURCE_PACK=https\://launcher.mojang.com/v1/objects/a6b56d6f14869646eb8d399e99a0149bdd954490/CavesAndCliffsPreview.zip'
     volumes:
       - ./.data:/data
