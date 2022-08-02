@@ -25,3 +25,8 @@ fi
 echo "---"
 echo "creating ${BACKUP_DIR}/${TIMESTAMP}.tar.gz"
 tar -I pigz -cf ${BACKUP_DIR}/${TIMESTAMP}.tar.gz .data
+
+if [ -f backup-remote.sh ]; then
+    bash -ex $(realpath ./backup-remote.sh) ${BACKUP_DIR}/${TIMESTAMP}.tar.gz
+fi
+

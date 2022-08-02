@@ -1,3 +1,4 @@
 .data
 .backups
 .daily
+backup-remote.sh
