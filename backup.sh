@@ -2,7 +2,7 @@
 
 cd $(dirname $(realpath $0))
 
-BACKUP_LIMIT=${1:-5}
+BACKUP_LIMIT=${1:-12}
 BACKUP_DIR=${2:-$(pwd)/.backups}
 TIMESTAMP="$(date +%s)"
 
@@ -24,4 +24,4 @@ fi
 
 echo "---"
 echo "creating ${BACKUP_DIR}/${TIMESTAMP}.tar.gz"
-tar -czf ${BACKUP_DIR}/${TIMESTAMP}.tar.gz .data
+tar -I pigz -cf ${BACKUP_DIR}/${TIMESTAMP}.tar.gz .data
