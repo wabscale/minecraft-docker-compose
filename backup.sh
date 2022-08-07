@@ -4,7 +4,7 @@ cd $(dirname $(realpath $0))
 
 BACKUP_LIMIT=${1:-12}
 BACKUP_DIR=${2:-$(pwd)/.backups}
-TIMESTAMP="$(date +%s)"
+TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 
 echo "BACKUP_LIMIT=${BACKUP_LIMIT}"
 echo "BACKUP_DIR=${BACKUP_DIR}"
@@ -27,6 +27,6 @@ echo "creating ${BACKUP_DIR}/${TIMESTAMP}.tar.gz"
 tar -I pigz -cf ${BACKUP_DIR}/${TIMESTAMP}.tar.gz .data
 
 if [ -f backup-remote.sh ]; then
-    bash -ex $(realpath ./backup-remote.sh) ${BACKUP_DIR}/${TIMESTAMP}.tar.gz
+    bash -ex backup-remote.sh ${BACKUP_DIR}/${TIMESTAMP}.tar.gz
 fi
 
